@@ -62,7 +62,7 @@ jobs:
         draft: true
         files: ${{ env.ASSET }}
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.ddd }}
 
   publish-release:
     name: publish-release
@@ -73,6 +73,6 @@ jobs:
       - name: Publish release
         uses: StuYarrow/publish-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ddd }}
         with:
           id: ${{ needs.build.outputs.release_id }}
