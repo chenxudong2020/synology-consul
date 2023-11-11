@@ -1,25 +1,25 @@
 #!/bin/bash
 case "$1" in
     start)
-        if [ "${EUID}" -eq 0 ]; then
-            sudo -u unas synosystemctl start pkguser-unas
-        else
+       # if [ "${EUID}" -eq 0 ]; then
+        #    sudo -u unas synosystemctl start pkguser-unas
+        #else
             synosystemctl start pkguser-unas
-        fi
+        #fi
         ;;
     stop)
-        if [ "${EUID}" -eq 0 ]; then
-            sudo -u unas synosystemctl stop pkguser-unas
-        else
+       # if [ "${EUID}" -eq 0 ]; then
+       #     sudo -u unas synosystemctl stop pkguser-unas
+       # else
             synosystemctl stop pkguser-unas
-        fi
+       # fi
         ;;
     status)
-        if [ "${EUID}" -eq 0 ]; then
-            sudo -u unas synosystemctl get-active-status pkguser-unas
-        else
+       # if [ "${EUID}" -eq 0 ]; then
+       #     sudo -u unas synosystemctl get-active-status pkguser-unas
+       # else
             synosystemctl get-active-status pkguser-unas
-        fi
+       # fi
         ;;
     log)
         echo ""
