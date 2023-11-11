@@ -1,3 +1,4 @@
 #!/bin/bash
 source /var/packages/unas/var/env.sh
-nohup ./tempature.sh &
+cd /var/packages/unas/target/package/bin
+nohup ./tempature.sh >/dev/null 2>&1 &
