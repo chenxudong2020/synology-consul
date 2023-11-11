@@ -2,21 +2,21 @@
 case "$1" in
     start)
         if [ "${EUID}" -eq 0 ]; then
-            sudo -u root synosystemctl start pkguser-unas
+            sudo -u unas synosystemctl start pkguser-unas
         else
             synosystemctl start pkguser-unas
         fi
         ;;
     stop)
         if [ "${EUID}" -eq 0 ]; then
-            sudo -u root synosystemctl stop pkguser-unas
+            sudo -u unas synosystemctl stop pkguser-unas
         else
             synosystemctl stop pkguser-unas
         fi
         ;;
     status)
         if [ "${EUID}" -eq 0 ]; then
-            sudo -u root synosystemctl get-active-status pkguser-unas
+            sudo -u unas synosystemctl get-active-status pkguser-unas
         else
             synosystemctl get-active-status pkguser-unas
         fi
