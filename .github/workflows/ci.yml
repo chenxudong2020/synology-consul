@@ -39,6 +39,10 @@ jobs:
       run: |
         echo "VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
         echo "PACKAGE_VERSION=$(grep -m 1 '^export PACKAGE_VERSION=' build.sh | cut -f 2 -d '=')" >> $GITHUB_ENV
+        echo "-------------------------------------------------------------"
+        echo "${{ env.VERSION }}"
+        echo "${{ env.PACKAGE_VERSION }}"
+        echo "${{ github.ref }}"
 
     - name: Validate git tag and Cargo.toml version
       shell: bash
