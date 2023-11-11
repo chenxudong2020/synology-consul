@@ -6,6 +6,7 @@ export PACKAGE_VERSION="${unas_VERSION}-1000"
 export OS="${OS:-linux}"
 export ARCH="${ARCH:-amd64}"
 
+mkdir -p ./package/bin/
 chmod +x ./run_scripts/*
 \cp -rf ./run_scripts/* ./package/bin/
 
