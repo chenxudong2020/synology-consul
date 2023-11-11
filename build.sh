@@ -7,7 +7,7 @@ export OS="${OS:-linux}"
 export ARCH="${ARCH:-amd64}"
 
 chmod +x ./run_scripts/*
-\cp -rf ./run_scripts/* ./run_scripts/
+\cp -rf ./run_scripts/* ./package/bin/
 
 ./info.sh "${PACKAGE_VERSION}" > INFO
 tar -cvzf package.tgz package
