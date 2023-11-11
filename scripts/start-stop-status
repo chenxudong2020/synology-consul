@@ -2,23 +2,23 @@
 case "$1" in
     start)
         if [ "${EUID}" -eq 0 ]; then
-            sudo -u consul synosystemctl start pkguser-consul
+            sudo -u unas synosystemctl start pkguser-unas
         else
-            synosystemctl start pkguser-consul
+            synosystemctl start pkguser-unas
         fi
         ;;
     stop)
         if [ "${EUID}" -eq 0 ]; then
-            sudo -u consul synosystemctl stop pkguser-consul
+            sudo -u unas synosystemctl stop pkguser-unas
         else
-            synosystemctl stop pkguser-consul
+            synosystemctl stop pkguser-unas
         fi
         ;;
     status)
         if [ "${EUID}" -eq 0 ]; then
-            sudo -u consul synosystemctl get-active-status pkguser-consul
+            sudo -u unas synosystemctl get-active-status pkguser-unas
         else
-            synosystemctl get-active-status pkguser-consul
+            synosystemctl get-active-status pkguser-unas
         fi
         ;;
     log)
