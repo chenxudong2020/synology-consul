@@ -1,14 +1,26 @@
 #!/bin/sh
 set -e
 
+#export unas_SHARE_DIR="${SYNOPKG_PKGDEST_VOL}/unas"
 
-ui_config {
+#mkdir -p /var/packages/unas/var
+#cat <<EOF > "/var/packages/unas/var/env.sh"
+#export unas_SHARE_DIR="$unas_SHARE_DIR"
+#EOF
+
+#mkdir -p "${unas_SHARE_DIR}/etc/unas.d"
+#if [ ! -f "${unas_SHARE_DIR}/etc/unas.d/unas.hcl" ]; then
+#  mkdir -p "${unas_SHARE_DIR}/var/lib/unas"
+ # cat <<EOF > "${unas_SHARE_DIR}/etc/unas.d/unas.hcl"
+#data_dir="${unas_SHARE_DIR}/var/lib/unas"
+#client_addr = "0.0.0.0"
+#ui_config {
     enabled = false
-}
-server = true
-bootstrap_expect = 1
-enable_syslog = true
-EOF
-fi;
+#}
+#server = true
+#bootstrap_expect = 1
+#enable_syslog = true
+#EOF
+#fi;
 
 exit 0
