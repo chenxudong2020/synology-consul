@@ -2,13 +2,6 @@
     "systemd-user-unit":{},
 	"usr-local-linker": {
 		"bin": ["package/bin/unas"]
-	},
-    "data-share": {
-        "shares": [{
-            "name": "unas",
-            "permission": {
-                "rw": ["unas"]
-            }
-        }]
-    }
+	}
+   
 }
