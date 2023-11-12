@@ -6,7 +6,6 @@ After=network-online.target
 Type=simple
 Slice=unas.slice
 ExecStart=/var/packages/unas/target/package/start.sh
-ExecStop==/var/packages/unas/target/package/start.sh
 Restart=always
 RestartSec=5
 KillMode=process

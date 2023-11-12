@@ -1,3 +1,5 @@
 #!/bin/bash
-cd /var/packages/unas/target/package/bin
-./tempature.sh
+SVC_SETUP="$(dirname "$0")/tempature.sh"
+if [ -r "${SVC_SETUP}" ]; then
+	. "${SVC_SETUP}"
+fi
