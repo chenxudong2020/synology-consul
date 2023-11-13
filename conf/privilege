@@ -2,19 +2,18 @@
     "defaults": {
         "run-as": "package"
     },
-    "username": "unas",
     "ctrl-script":[{
 		"action": "postinst",
-		"run-as": "root"
+		"run-as": "package"
 	}, {
 		"action": "preuninst",
-		"run-as": "root"
+		"run-as": "package"
 	}, {
 		"action": "start",
-		"run-as": "root"
+		"run-as": "package"
 	}, {
 		"action": "stop",
-		"run-as": "root"
+		"run-as": "package"
 	}
 ],
 "executable": [{
