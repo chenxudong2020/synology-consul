@@ -1,5 +1,4 @@
 #!/bin/bash
-SVC_SETUP="$(dirname "$0")/tempature.sh"
-if [ -r "${SVC_SETUP}" ]; then
-	. "${SVC_SETUP}"
-fi
+/var/packages/${SYNOPKG_PKGNAME}/target/package/bin/tempature.sh
+
+

@@ -4,7 +4,6 @@ PRIVATE_LOCATION="/var/packages/${SYNOPKG_PKGNAME}/target/package"
 START_FILE="./start.sh"
 STOP_FILE="./stop.sh"
 
-
 case $1 in
     start)
         cd ${PRIVATE_LOCATION}
