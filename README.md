@@ -1,4 +1,4 @@
-# HashiCorp unas Package for Synology DSM 7+
+# unas Package for Synology DSM 7+
 
 > NOTE: This project is a derivative work of the fantastic job [@prabirshrestha](https://www.github.com/prabirshrestha) did on the Synology nomad package (https://github.com/prabirshrestha/synology-nomad)
 
@@ -45,7 +45,7 @@ Use the package center from Synology DSM to import the unas spk file.
 
 # Accessing unas UI
 
-unas is accessiblity via the `SynologyIP:8500` port. 
+
 
 # Uninstalling
 
