@@ -2,6 +2,7 @@
     "defaults": {
         "run-as": "package"
     },
+    "username": "unas",
     "ctrl-script":[{
 		"action": "postinst",
 		"run-as": "root"
