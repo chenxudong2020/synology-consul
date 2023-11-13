@@ -6,6 +6,7 @@ STOP_FILE="./stop.sh"
 
 case $1 in
     start)
+<<<<<<< HEAD
         cd ${PRIVATE_LOCATION}
         /bin/sh ${START_FILE}
     ;;
@@ -23,3 +24,33 @@ case $1 in
         fi
     ;;
 esac
+=======
+       # if [ "${EUID}" -eq 0 ]; then
+        #    sudo -u unas synosystemctl start pkguser-unas
+        #else
+            synosystemctl start pkguser-unas
+        #fi
+        ;;
+    stop)
+       # if [ "${EUID}" -eq 0 ]; then
+       #     sudo -u unas synosystemctl stop pkguser-unas
+       # else
+            synosystemctl stop pkguser-unas
+       # fi
+        ;;
+    status)
+       # if [ "${EUID}" -eq 0 ]; then
+       #     sudo -u unas synosystemctl get-active-status pkguser-unas
+       # else
+            synosystemctl get-active-status pkguser-unas
+       # fi
+        ;;
+    log)
+        echo ""
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|status}" >&2
+        exit 1
+        ;;
+esac
+>>>>>>> parent of d29c576 (Update start-stop-status)
