@@ -2,6 +2,6 @@
     "defaults": {
         "run-as": "package"
     },
-    "username": "unas",
-    "join-groupname": "system"
+    "username": "unas"
+
 }
