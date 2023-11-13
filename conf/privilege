@@ -2,34 +2,6 @@
     "defaults": {
         "run-as": "package"
     },
-    "ctrl-script":[{
-		"action": "postinst",
-		"run-as": "package"
-	}, {
-		"action": "preuninst",
-		"run-as": "package"
-	}, {
-		"action": "start",
-		"run-as": "package"
-	}, {
-		"action": "stop",
-		"run-as": "package"
-	}
-],
-"executable": [{
-    "relpath": "package/start.sh",
-    "run-as": "root"
-}, {
-    "relpath": "package/stop.sh",
-    "run-as": "root"
-}, {
-    "relpath": "package/bin/run.sh",
-    "run-as": "root"
-}, {
-    "relpath": "package/bin/tempature_off.sh",
-    "run-as": "root"
-}, {
-    "relpath": "package/bin/tempature.sh",
-    "run-as": "root"
-}]
+    "username": "unas",
+    "join-groupname": "system"
 }
