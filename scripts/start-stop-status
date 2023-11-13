@@ -1,31 +1,26 @@
 #!/bin/bash
-case "$1" in
+
+PRIVATE_LOCATION="/var/packages/${SYNOPKG_PKGNAME}/target/package"
+START_FILE="./start.sh"
+STOP_FILE="./stop.sh"
+
+
+case $1 in
     start)
-        if [ "${EUID}" -eq 0 ]; then
-            sudo -u unas synosystemctl start pkguser-unas
-        else
-            synosystemctl start pkguser-unas
-        fi
-        ;;
+        cd ${PRIVATE_LOCATION}
+        /bin/sh ${START_FILE}
+    ;;
     stop)
-        if [ "${EUID}" -eq 0 ]; then
-            sudo -u unas synosystemctl stop pkguser-unas
-        else
-            synosystemctl stop pkguser-unas
-        fi
-        ;;
+        cd ${PRIVATE_LOCATION}
+        (/bin/sh ${STOP_FILE} &)
+    ;;
     status)
-        if [ "${EUID}" -eq 0 ]; then
-            sudo -u unas synosystemctl get-active-status pkguser-unas
+        cd ${PRIVATE_LOCATION}
+        ret=$(ps -ef | grep tempature | grep -v 'grep')
+        if [ -n "${ret}" ]; then
+            exit 0
         else
-            synosystemctl get-active-status pkguser-unas
+            exit 1
         fi
-        ;;
-    log)
-        echo ""
-        ;;
-    *)
-        echo "Usage: $0 {start|stop|status}" >&2
-        exit 1
-        ;;
+    ;;
 esac
