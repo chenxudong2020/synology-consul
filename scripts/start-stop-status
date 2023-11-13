@@ -1,49 +1,27 @@
-#!/bin/bash
+!/bin/bash
 
-PRIVATE_LOCATION="/var/packages/${SYNOPKG_PKGNAME}/target/package"
-START_FILE="./start.sh"
-STOP_FILE="./stop.sh"
 
 case $1 in
     start)
-<<<<<<< HEAD
-        cd ${PRIVATE_LOCATION}
-        /bin/sh ${START_FILE}
-    ;;
-    stop)
-        cd ${PRIVATE_LOCATION}
-        (/bin/sh ${STOP_FILE} &)
-    ;;
-    status)
-        cd ${PRIVATE_LOCATION}
-        ret=$(ps -ef | grep tempature | grep -v 'grep')
-        if [ -n "${ret}" ]; then
-            exit 0
+        if [ "${EUID}" -eq 0 ]; then
+            sudo -u unas synosystemctl start pkguser-unas
         else
-            exit 1
-        fi
-    ;;
-esac
-=======
-       # if [ "${EUID}" -eq 0 ]; then
-        #    sudo -u unas synosystemctl start pkguser-unas
-        #else
             synosystemctl start pkguser-unas
-        #fi
+        fi
         ;;
     stop)
-       # if [ "${EUID}" -eq 0 ]; then
-       #     sudo -u unas synosystemctl stop pkguser-unas
-       # else
+        if [ "${EUID}" -eq 0 ]; then
+            sudo -u unas synosystemctl stop pkguser-unas
+        else
             synosystemctl stop pkguser-unas
-       # fi
+        fi
         ;;
     status)
-       # if [ "${EUID}" -eq 0 ]; then
-       #     sudo -u unas synosystemctl get-active-status pkguser-unas
-       # else
+        if [ "${EUID}" -eq 0 ]; then
+            sudo -u unas synosystemctl get-active-status pkguser-unas
+        else
             synosystemctl get-active-status pkguser-unas
-       # fi
+        fi
         ;;
     log)
         echo ""
@@ -53,4 +31,3 @@ esac
         exit 1
         ;;
 esac
->>>>>>> parent of d29c576 (Update start-stop-status)
